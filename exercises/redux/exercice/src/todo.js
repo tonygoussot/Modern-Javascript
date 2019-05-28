@@ -1,17 +1,18 @@
 import React from 'react';
-import { getState, dispatch } from './myRedux'
+import {getState, dispatch} from './myRedux'
 
+const TODO_ACTION = () => ({
+    type: 'ADD_TODO',
+    text: this.input.value
+});
 
 class Todo extends React.Component {
-
     OnAddHandler = () => {
         if (this.input.value)
-            dispatch({
-                type: 'ADD_TODO',
-                text: this.input.value
-            })
+            dispatch(TODO_ACTION());
         this.input.value = ''
-    }
+    };
+
     render() {
         return (
             <div>
@@ -19,7 +20,7 @@ class Todo extends React.Component {
                     this.input = node
                 }}
                 />
-                <button onClick={this.OnAddHandler} >Add Todo</button>
+                <button onClick={this.OnAddHandler}>Add Todo</button>
                 <ul>
                     {getState().todos.map((tod) =>
                         <li key={Math.random()}>{tod}</li>

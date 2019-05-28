@@ -12,18 +12,10 @@ const dispatch = action => {
 };
 
 const subscribe = (listener) => {
-    listeners.push(listener)
-    return () => {
-        listeners.filter(lis => lis !== listener)
-    }
+    listeners.push(listener);
+    return () => listeners.filter(lis => lis !== listener);
 };
 
-
-dispatch({});
-
-const reducers = () => reducer;
-
-reducers(); //getting the reducers
 
 function Async(cb, request) {
     request(cb);

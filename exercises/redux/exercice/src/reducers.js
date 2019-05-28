@@ -13,17 +13,10 @@ function reducer(action, state = initalState) {
                 ...state,
                 num: state.num + 1
             };
-        case "DEC":
-            return {
-                ...state,
-                num: state.num - 1
-            };
-
         case "ADD_TODO":
-            return {
-                ...state,
-                todos: [...state.todos, action.text]
-            };
+            /*
+            *  ADD_TODO reducer
+            * */
         default:
             return state;
     }
