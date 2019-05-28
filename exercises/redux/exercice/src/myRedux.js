@@ -1,20 +1,10 @@
 import { reducer } from './reducers'; //import your reducer
 
-let state;
-
-const getState = () => state;
-
-const listeners = [];
-
-const dispatch = action => {
-    state = reducer(action, state);
-    listeners.forEach(listener => listener())
-};
-
-const subscribe = (listener) => {
-    listeners.push(listener);
-    return () => listeners.filter(lis => lis !== listener);
-};
+/*
+*
+* Insert Redux here
+*
+* */
 
 
 function Async(cb, request) {
